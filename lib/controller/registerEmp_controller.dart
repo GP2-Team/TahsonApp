@@ -7,6 +7,7 @@ class RegisterEmpController extends GetxController {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final employeeIdController = TextEditingController();
+  var isLoading = false.obs;
 
   void signUp() async {
     try {
@@ -24,24 +25,47 @@ class RegisterEmpController extends GetxController {
         return;
       }
 
-      // Create user in Firestore with role 'admin'
+      isLoading.value = true; // Show loading indicator
+
+      // Check if the user already exists
+      var existingUser = await FirebaseFirestore.instance
+          .collection('users')
+          .where('email', isEqualTo: email)
+          .get();
+
+      if (existingUser.docs.isNotEmpty) {
+        Get.snackbar('Error', 'User with this email already exists.',
+            snackPosition: SnackPosition.BOTTOM);
+        isLoading.value = false;
+        return;
+      }
+
+      // Create user in Firestore with role 'emp'
       await FirebaseFirestore.instance.collection('users').add({
         'name': name,
         'email': email,
         'password': password,
-        'employeeId': employeeIdController,
+        'employeeId': employeeId,
         'role': 'emp',
       });
 
       // Show success message
-      Get.snackbar('Success', 'Employee Registered successfully.',
+      Get.snackbar('Success', 'Employee registered successfully.',
           snackPosition: SnackPosition.BOTTOM);
 
-      // Optionally, navigate to another screen
-      // Get.offNamed('/home');
+      // Clear the text fields
+      nameController.clear();
+      emailController.clear();
+      passwordController.clear();
+      employeeIdController.clear();
+
+      // Navigate back to the login screen
+      Get.offNamed('/login');
     } catch (e) {
       Get.snackbar('Error', 'Failed to sign up: $e',
           snackPosition: SnackPosition.BOTTOM);
+    } finally {
+      isLoading.value = false; // Hide loading indicator
     }
   }
 
@@ -50,6 +74,7 @@ class RegisterEmpController extends GetxController {
     nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
+    employeeIdController.dispose();
     super.onClose();
   }
 }

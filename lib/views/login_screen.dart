@@ -69,6 +69,7 @@ class LoginScreen extends GetView<LoginController> {
               TextButton(
                 onPressed: () {
                   Get.toNamed(Routes.FORGETPASSWORDSCREEN);
+
                 },
                 child: Text(
                   'Forget Password',
@@ -91,7 +92,7 @@ class LoginScreen extends GetView<LoginController> {
                 SizedBox(height: 16),
               TextButton(
                 onPressed: () {
-                  Get.toNamed(Routes.REGISTERADMINSCREEN);
+                  Get.toNamed(Routes.REGISTEREMPSCREEN);
                 },
                 child: Text(
                   'Create Employee Account',

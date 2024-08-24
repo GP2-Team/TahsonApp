@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:tahson/customStyle/appcolors.dart';
 import 'package:tahson/controller/home_controller.dart';
@@ -15,15 +16,24 @@ class HomeScreen extends GetView<HomeController> {
         iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: AppColors.bondiBlue,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Obx(() {
-          if (controller.isAdmin.value) {
-            return _buildAdminDashboard();
-          } else {
-            return _buildEmployeeDashboard();
-          }
-        }),
+      body: Column(
+        children: [
+ListTile(
+  title: Obx(() => Text(controller.isAdmin.value ? "Welcome, Admin" : "Welcome, Employee", style: robotoHugeBlack,)) ,
+),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Obx(() {
+                if (controller.isAdmin.value) {
+                  return _buildAdminDashboard();
+                } else {
+                  return _buildEmployeeDashboard();
+                }
+              }),
+            ),
+          ),
+        ],
       ),
     );
   }
