@@ -3,6 +3,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tahson/controller/forgetPassword_controller.dart';
 import 'package:tahson/controller/home_controller.dart';
 import 'package:tahson/controller/login_controller.dart';
+import 'package:tahson/controller/registerAdmin_controller.dart';
+import 'package:tahson/controller/registerEmp_controller.dart';
 
 Future init() async {
   final sharedPreferences = await SharedPreferences.getInstance();
@@ -11,4 +13,6 @@ Future init() async {
 
   Get.lazyPut(() => ForgotPasswordController(), fenix: true);
   Get.lazyPut(() => HomeController(), fenix: true);
+  Get.lazyPut(() => RegisterAdminController(), fenix: true);
+  Get.lazyPut(() => RegisterEmpController(), fenix: true);
 }

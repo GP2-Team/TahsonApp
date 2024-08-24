@@ -21,7 +21,21 @@ class RegisterEmpScreen extends GetView<RegisterEmpController> {
               controller: controller.nameController,
               decoration: InputDecoration(
                 labelText: 'Name',
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                prefixIcon: Icon(Icons.person),
+              ),
+            ),
+            SizedBox(height: 16),
+            TextField(
+              controller: controller.employeeIdController,
+              decoration: InputDecoration(
+                labelText: 'Employee_ID',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                prefixIcon: Icon(Icons.numbers_outlined),
               ),
             ),
             SizedBox(height: 16),
@@ -29,7 +43,10 @@ class RegisterEmpScreen extends GetView<RegisterEmpController> {
               controller: controller.emailController,
               decoration: InputDecoration(
                 labelText: 'Email',
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                prefixIcon: Icon(Icons.email),
               ),
             ),
             SizedBox(height: 16),
@@ -38,7 +55,10 @@ class RegisterEmpScreen extends GetView<RegisterEmpController> {
               obscureText: true,
               decoration: InputDecoration(
                 labelText: 'Password',
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                prefixIcon: Icon(Icons.password),
               ),
             ),
             SizedBox(height: 24),

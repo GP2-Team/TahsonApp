@@ -66,13 +66,35 @@ class LoginScreen extends GetView<LoginController> {
                     ),
                   )),
               SizedBox(height: 16),
-              // Optional: Register button
               TextButton(
                 onPressed: () {
                   Get.toNamed(Routes.FORGETPASSWORDSCREEN);
                 },
                 child: Text(
                   'Forget Password',
+                  style: TextStyle(color: AppColors.bondiBlue),
+                ),
+              ),
+
+                SizedBox(height: 16),
+              TextButton(
+                onPressed: () {
+                  Get.toNamed(Routes.REGISTERADMINSCREEN);
+                },
+                child: Text(
+                  'Create Admin Account',
+                  style: TextStyle(color: AppColors.bondiBlue),
+                ),
+              ),
+
+
+                SizedBox(height: 16),
+              TextButton(
+                onPressed: () {
+                  Get.toNamed(Routes.REGISTERADMINSCREEN);
+                },
+                child: Text(
+                  'Create Employee Account',
                   style: TextStyle(color: AppColors.bondiBlue),
                 ),
               ),

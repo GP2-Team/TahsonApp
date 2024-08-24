@@ -25,6 +25,8 @@ abstract class Routes {
   static const SPLASHSCREEN = _Paths.SPLASHSCREEN;
 
   static const FORGETPASSWORDSCREEN = _Paths.FORGETPASSWORDSCREEN;
+  static const REGISTERADMINSCREEN = _Paths.REGISTERADMINSCREEN;
+  static const REGISTEREMPSCREEN = _Paths.REGISTEREMPSCREEN;
 }
 
 abstract class _Paths {
@@ -48,4 +50,6 @@ abstract class _Paths {
   static const SPLASHSCREEN = '/SPLASHSCREEN';
 
   static const FORGETPASSWORDSCREEN = '/FORGETPASSWORDSCREEN';
+  static const REGISTERADMINSCREEN = '/REGISTERADMINSCREEN';
+  static const REGISTEREMPSCREEN = '/REGISTEREMPSCREEN';
 }

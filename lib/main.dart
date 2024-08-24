@@ -5,8 +5,7 @@ import 'helper/git_di.dart' as di;
 import 'package:firebase_core/firebase_core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'customStyle/appcolors.dart';
 
 class MyApp extends StatelessWidget {

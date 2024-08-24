@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 import 'package:tahson/views/entryLog_screen.dart';
 import 'package:tahson/views/forgetPassword_screen.dart';
 import 'package:tahson/views/home_screen.dart';
+import 'package:tahson/views/registerAdmin_screen.dart';
+import 'package:tahson/views/registerEmp_screen.dart';
 import 'package:tahson/views/splash_screen.dart';
 
 import '../views/login_screen.dart';
@@ -36,6 +38,15 @@ class AppPages {
     GetPage(
       name: _Paths.ENTRYLOGSCREEN,
       page: () => EntryLogsScreen(),
+    ),
+
+     GetPage(
+      name: _Paths.REGISTERADMINSCREEN,
+      page: () => RegisterAdminScreen(),
+    ),
+       GetPage(
+      name: _Paths.REGISTEREMPSCREEN,
+      page: () => RegisterEmpScreen(),
     ),
     //   GetPage(
     //   name: _Paths.STARTTESTSCREEN,

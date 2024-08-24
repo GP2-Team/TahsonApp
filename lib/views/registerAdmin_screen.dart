@@ -13,15 +13,18 @@ class RegisterAdminScreen extends GetView<RegisterAdminController> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [  Image.asset(
-                Images.logo,
-              
-              ),
+          children: [
+            Image.asset(
+              Images.logo,
+            ),
             TextField(
               controller: controller.nameController,
               decoration: InputDecoration(
                 labelText: 'Name',
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                prefixIcon: Icon(Icons.person),
               ),
             ),
             SizedBox(height: 16),
@@ -29,7 +32,10 @@ class RegisterAdminScreen extends GetView<RegisterAdminController> {
               controller: controller.emailController,
               decoration: InputDecoration(
                 labelText: 'Email',
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                prefixIcon: Icon(Icons.email),
               ),
             ),
             SizedBox(height: 16),
@@ -38,7 +44,10 @@ class RegisterAdminScreen extends GetView<RegisterAdminController> {
               obscureText: true,
               decoration: InputDecoration(
                 labelText: 'Password',
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                prefixIcon: Icon(Icons.password),
               ),
             ),
             SizedBox(height: 24),
