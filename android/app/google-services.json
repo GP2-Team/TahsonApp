@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "448246291634",
+    "project_id": "tahsonapp",
+    "storage_bucket": "tahsonapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448246291634:android:d6afaab295fd64f078fdab",
+        "android_client_info": {
+          "package_name": "com.example.tahson"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBV9dxEQFurnBGBxDPCaSiu8ewgIgz9KY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
