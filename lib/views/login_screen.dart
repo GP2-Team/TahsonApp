@@ -18,7 +18,7 @@ class LoginScreen extends GetView<LoginController> {
             children: [
               Image.asset(
                 Images.logo,
-                // height: 250, // Adjust the size as needed
+              
               ),
               TextField(
                 controller: controller.usernameC,
